@@ -1,35 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My First GitHub Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background: #f5f5f5;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      color: #666;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Armstrong | Corporate Strategy & Process Improvement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #0ea5e9; /* sky-500 */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #0ea5e9; /* sky-500 */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .right::after {
+            left: -16px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.left, .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container::after {
+                left: 15px;
+            }
+            .right::after {
+                left: 15px;
+            }
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
-  <h1>🎉 Hello, World!</h1>
-  <p>Welcome to my first GitHub Pages website.</p>
-  <p>This page is live at: <br><strong>https://armstrongjoe.github.io/General/</strong></p>
-  <p>Edit <code>index.html</code> and commit changes to update this page.</p>
+<body class="text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <header class="mb-12 flex flex-col-reverse md:flex-row justify-between items-center">
+            <!-- Text Content -->
+            <div class="text-center md:text-left mt-8 md:mt-0">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-2">Joe Armstrong</h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-sky-600">CORPORATE STRATEGY | PROCESS IMPROVEMENT | HEALTHCARE OPERATIONS</h2>
+                <div class="flex justify-center md:justify-start items-center space-x-6 mt-4 text-slate-600">
+                    <a href="mailto:idarmstrong@outlook.com" class="flex items-center hover:text-sky-500 transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        idarmstrong@outlook.com
+                    </a>
+                    <a href="https://linkedin.com/in/joe-armstrong-nashville" target="_blank" class="flex items-center hover:text-sky-500 transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        linkedin.com/in/joe-armstrong-nashville
+                    </a>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="flex-shrink-0">
+                <img src="https://i.imgur.com/pWlqndU.jpeg" alt="Joe Armstrong" class="rounded-full h-32 w-32 md:h-40 md:w-40 object-cover border-4 border-sky-500 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/160x160/e0f2fe/0c4a6e?text=JA';">
+            </div>
+        </header>
+
+        <!-- Summary & Key Achievements -->
+        <section id="summary" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-center text-lg text-slate-700 leading-relaxed">
+                    Data science, Operations, and Project Management Professional with a proven track record of streamlining processes, cutting costs, and driving change. Multi-industry domestic and international experience, combining a hands-on approach with management theory in corporate and field settings. Vanderbilt MBA candidate and U.S. Army OIF Veteran.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-bold text-sky-500">12%</h3>
+                    <p class="text-slate-800 mt-2 font-semibold">Supply Cost Reduction</p>
+                    <p class="text-sm text-gray-500 mt-1">Achieved via improved GPO savings strategies.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-bold text-sky-500">61</h3>
+                    <p class="text-slate-800 mt-2 font-semibold">Product Initiatives Launched</p>
+                    <p class="text-sm text-gray-500 mt-1">Leveraging advantageous contract terms.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-bold text-sky-500">200+</h3>
+                    <p class="text-slate-800 mt-2 font-semibold">Project Managers Migrated</p>
+                    <p class="text-sm text-gray-500 mt-1">Championed upgrade to MS Project Professional.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-5xl font-bold text-sky-500">770+</h3>
+                    <p class="text-slate-800 mt-2 font-semibold">Managers Trained</p>
+                    <p class="text-sm text-gray-500 mt-1">Via a new e-learning leadership program.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section id="experience" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="text-xl font-bold text-sky-600">Manager, Process Improvement</h3>
+                        <h4 class="font-semibold text-slate-700">HealthTrust, Nashville, TN</h4>
+                        <p class="text-sm text-slate-500 mb-3">2017 - Present</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Led analytics development for surgical services value analysis.</li>
+                            <li>Directed implementation of GPO savings strategies, cutting supply costs by 12%.</li>
+                            <li>Launched 61 product initiatives to drive cost reductions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="content">
+                        <h3 class="text-xl font-bold text-sky-600">PMO Analyst</h3>
+                        <h4 class="font-semibold text-slate-700">Parallon, Nashville, TN</h4>
+                        <p class="text-sm text-slate-500 mb-3">Previous Role</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Led MS Project conversion for 200+ project managers.</li>
+                            <li>Converted Tableau dashboards to Power BI for 100+ executives.</li>
+                            <li>Launched attestation solutions integrating SharePoint and Power BI.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="text-xl font-bold text-sky-600">Developer</h3>
+                        <h4 class="font-semibold text-slate-700">Parallon, Nashville, TN</h4>
+                        <p class="text-sm text-slate-500 mb-3">Previous Role</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Created and implemented enterprise-wide training programs.</li>
+                            <li>Developed advanced Excel courses and improved virtual training.</li>
+                            <li>Designed SharePoint sites and Access databases for resource planning.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="content">
+                        <h3 class="text-xl font-bold text-sky-600">Project Manager</h3>
+                        <h4 class="font-semibold text-slate-700">Barnes & Noble Education, Basking Ridge, NJ</h4>
+                        <p class="text-sm text-slate-500 mb-3">2013 - 2017</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Championed enterprise-wide change management initiatives.</li>
+                            <li>Launched an e-learning program impacting 770+ managers.</li>
+                            <li>Secured 24 contract renewals and managed 60 direct reports.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="text-xl font-bold text-sky-600">Squad Leader</h3>
+                        <h4 class="font-semibold text-slate-700">United States Army, Fort Benning, GA</h4>
+                        <p class="text-sm text-slate-500 mb-3">2005 - 2009</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Directed operational missions in high-pressure environments.</li>
+                            <li>Led and trained a squad of 10-15 soldiers.</li>
+                            <li>Recognized with awards for exemplary performance and leadership.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-8">Technical & Professional Skills</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <p class="text-center text-slate-600 mb-6">A visual representation of key technical competencies. Proficiency is estimated for visualization purposes.</p>
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education and Service Section -->
+        <section id="education-service" class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-4xl font-bold text-center mb-8">Education & Training</h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">MBA, Executive Program (Anticipated)</h3>
+                            <p class="font-semibold">Vanderbilt University, Owen Graduate School of Management</p>
+                            <p class="text-sm text-slate-500">Student Veterans of America, International Residency, LDP</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">BS, Business Information Systems, Economics</h3>
+                            <p class="font-semibold">University of North Texas, G. Brint Ryan College of Business</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">Diploma, NCO Warrior Leadership</h3>
+                            <p class="font-semibold">United States Army, Fort Benning, GA</p>
+                            <p class="text-sm text-slate-500">Operation Iraqi Freedom Veteran</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-center mb-8">Leadership & Community</h2>
+                     <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">Wounded Warrior Project</h3>
+                            <p class="font-semibold">Committee Member - Carry Forward</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">Team Rubicon</h3>
+                            <p class="font-semibold">Command Support - Multiple Operations</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-lg text-sky-700">Team RWB</h3>
+                            <p class="font-semibold">Chapter Board Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 pt-8 border-t border-slate-200">
+            <p class="text-slate-500">Joe Armstrong has created this interactive resume based on his professional profile for public distribution.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(skillsCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Power BI', 'Tableau', 'MS Excel / VBA', 'Python', 'Cloud (AWS/GCP/Azure)',
+                    'MS Project', 'SharePoint', 'JIRA', 'SQL / Snowflake', 'AI / LLMs'
+                ],
+                datasets: [{
+                    label: 'Proficiency',
+                    data: [95, 90, 95, 80, 75, 98, 90, 85, 88, 80],
+                    backgroundColor: [
+                        'rgba(2, 132, 199, 0.8)', // sky-600
+                        'rgba(14, 165, 233, 0.8)',// sky-500
+                        'rgba(56, 189, 248, 0.8)',// sky-400
+                        'rgba(125, 211, 252, 0.8)',// sky-300
+                        'rgba(2, 132, 199, 0.8)',
+                        'rgba(14, 165, 233, 0.8)',
+                        'rgba(56, 189, 248, 0.8)',
+                        'rgba(125, 211, 252, 0.8)',
+                        'rgba(2, 132, 199, 0.8)',
+                        'rgba(14, 165, 233, 0.8)',
+                    ],
+                    borderColor: [
+                        'rgba(2, 132, 199, 1)',
+                        'rgba(14, 165, 233, 1)',
+                        'rgba(56, 189, 248, 1)',
+                        'rgba(125, 211, 252, 1)',
+                        'rgba(2, 132, 199, 1)',
+                        'rgba(14, 165, 233, 1)',
+                        'rgba(56, 189, 248, 1)',
+                        'rgba(125, 211, 252, 1)',
+                        'rgba(2, 132, 199, 1)',
+                        'rgba(14, 165, 233, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: '#0369a1', // sky-700
+                            callback: function(value) {
+                                return value + "%"
+                            }
+                        },
+                        grid: {
+                            color: '#e0f2fe' // sky-100
+                        },
+                        title: {
+                            display: true,
+                            text: 'Estimated Proficiency',
+                            color: '#0c4a6e' // sky-900
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#0369a1', // sky-700
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
