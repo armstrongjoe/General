@@ -12,7 +12,7 @@ It’s a simple HTML page to test how GitHub Pages works.
 ## 🌐 View it live
 
 Visit it here:  
-**https://armstrongjoe.github.io/your-repo-name/**
+**https://armstrongjoe.github.io/General/**
 
 ## 🛠️ How to update
 
