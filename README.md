@@ -1,26 +1,18 @@
-# My First GitHub Pages Website
+# Joe Armstrong | Interactive Resume
 
-Welcome! 👋
+This is my interactive resume hosted with GitHub Pages.
 
-This is my very first website hosted on **GitHub Pages**.  
-It’s a simple HTML page to test how GitHub Pages works.
+**Live here:** [https://yourusername.github.io/your-repo-name/](https://yourusername.github.io/your-repo-name/)
 
-## 📄 What’s inside
+**Built with:**  
+- HTML5  
+- Tailwind CSS CDN  
+- Chart.js CDN  
+- Responsive timeline and skill chart
 
-- **index.html** — the main webpage you see when you visit.
+---
 
-## 🌐 View it live
-
-Visit it here:  
-**https://armstrongjoe.github.io/General/**
-
-## 🛠️ How to update
-
-1. Edit `index.html` in this repo.
-2. Commit your changes.
-3. GitHub Pages will update automatically — refresh the link to see your changes.
-
-## 🚀 Built with
-
-- HTML5
-- GitHub Pages
+## How to update
+- Edit `index.html`
+- Commit changes
+- Done! GitHub Pages updates automatically.
