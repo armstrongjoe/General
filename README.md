@@ -3,6 +3,7 @@
 This is my interactive resume hosted with GitHub Pages.
 
 **Live here:** (https://armstrongjoe.github.io/General/)]
+
 **Built with:**  
 - HTML5  
 - Tailwind CSS CDN  
