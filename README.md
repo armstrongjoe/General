@@ -2,8 +2,7 @@
 
 This is my interactive resume hosted with GitHub Pages.
 
-**Live here:** [[https://yourusername.github.io/your-repo-name/](https://yourusername.github.io/your-repo-name/)
-](https://armstrongjoe.github.io/General/)
+**Live here:** (https://armstrongjoe.github.io/General/)]
 **Built with:**  
 - HTML5  
 - Tailwind CSS CDN  
